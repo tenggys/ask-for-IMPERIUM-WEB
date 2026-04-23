@@ -1,8 +1,8 @@
 //слайдер фона .promo
 const slides = [
-    '/images/promo.jpg',
-    '/images/specialists1.jpg',
-    '/images/specialists2.jpg'
+    'images/promo.jpg',
+    'images/specialists1.jpg',
+    'images/specialists2.jpg'
 ];
 
 let currentIndex = 0;

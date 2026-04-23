@@ -46,13 +46,13 @@ body {
 a {
     text-decoration: none;
     display: block;
-    cursor: url('/images/cursor.svg') 0 0, pointer;
+    cursor: url('images/cursor.svg') 0 0, pointer;
 }
 ul {
     list-style-type: none;
 }
 button {
-    cursor: url('/images/cursor.svg') 0 0, pointer;
+    cursor: url('images/cursor.svg') 0 0, pointer;
 }
 .container {
     max-width: $widthContainer;
@@ -140,7 +140,7 @@ button {
         left: 0;
         width: 100%;
         height: 100%;
-        background: var(--promo-bg, url('/images/promo.jpg')) no-repeat center/cover;
+        background: var(--promo-bg, url('images/promo.jpg')) no-repeat center/cover;
         transform: scaleX(-1);
         background-position: center top 27%;
         z-index: -1;
@@ -239,7 +239,7 @@ button {
     }
 
     &__arrows svg {
-        cursor: url('/images/cursor.svg') 0 0, pointer;
+        cursor: url('images/cursor.svg') 0 0, pointer;
     }
 }
 //popular
@@ -285,25 +285,25 @@ button {
     &__item:nth-child(1) {
         width: 100%;
         height: 50%;
-        background: url('/images/popular1.jpg') no-repeat center/cover;
+        background: url('images/popular1.jpg') no-repeat center/cover;
     }
 
     &__item:nth-child(2) {
         width: 50%;
         height: 50%;
-        background: url('/images/popular2.jpg') no-repeat center/cover;
+        background: url('images/popular2.jpg') no-repeat center/cover;
     }
 
     &__item:nth-child(3) {
         width: 50%;
         height: 50%;
-        background: url('/images/popular3.jpg') no-repeat center/cover;
+        background: url('images/popular3.jpg') no-repeat center/cover;
         background-position: bottom 12px center;
     }
 
     &__item-right {
         width: 504px;
-        background: url('/images/popular4.jpg') no-repeat center/cover;
+        background: url('images/popular4.jpg') no-repeat center/cover;
     }
 
     &__item-text {
@@ -354,7 +354,7 @@ button {
     }
 
     &__button-pre, &__button-next {
-        cursor: url(/images/cursor.svg) 0 0, pointer;
+        cursor: url(images/cursor.svg) 0 0, pointer;
     }
 
     &__cards {
@@ -371,7 +371,7 @@ button {
 
         &:hover {
             background: $backOffersCard;
-            cursor: url('/images/cursor.svg') 0 0, pointer;
+            cursor: url('images/cursor.svg') 0 0, pointer;
         }
     }
 
@@ -433,7 +433,7 @@ button {
         cursor: pointer;
         
         &:hover {
-            cursor: url('/images/cursor.svg') 0 0, pointer;
+            cursor: url('images/cursor.svg') 0 0, pointer;
             &::before {
                 content: '';
                 position: absolute;
@@ -565,7 +565,7 @@ button {
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('/images/specialists1.jpg') no-repeat;
+            background: url('images/specialists1.jpg') no-repeat;
             background-size: cover;
             transform: scaleX(-1);
             z-index: 1;
@@ -590,7 +590,7 @@ button {
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('/images/specialists2.jpg') no-repeat;
+            background: url('images/specialists2.jpg') no-repeat;
             background-size: cover;
             transform: scaleX(-1);
             z-index: 1;
