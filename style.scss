@@ -1,0 +1,830 @@
+@import 'mixins';
+@import 'vars';
+
+.pt-sans-regular {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.pt-sans-bold {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.pt-sans-regular-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.pt-sans-bold-italic {
+  font-family: "PT Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.cormorant-infant-regular {
+  font-family: "Cormorant Infant", serif; 
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+body {
+    padding-left: 72px;
+    font-family: "Cormorant Infant", serif;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+    cursor: url('/images/cursor.svg') 0 0, pointer;
+}
+ul {
+    list-style-type: none;
+}
+button {
+    cursor: url('/images/cursor.svg') 0 0, pointer;
+}
+.container {
+    max-width: $widthContainer;
+    
+}
+//header
+.header {
+    padding: 36px 21px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    @include flex-column;
+    align-items: center;
+    background: $backHeader;
+
+    &__logo {
+        width: 30px;
+        height: 30px;
+        background: $backLogo;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        margin-bottom: 46px;
+    }
+
+    &__logo-text {
+        @include text (400, 10px, 100%, $textLogo);
+    }
+
+    &__burger {
+        width: 24px;
+        height: 12px;
+        margin-bottom: 48px;
+        cursor: pointer;
+    }
+
+
+    &__nav-list {
+        @include flex-column;
+        gap: 16px;
+    }
+
+    &__nav-text {
+        display: none;
+        @include text (400, 13px, 100%, $textNav);
+    }
+
+    &__search {
+        position: relative;
+        margin-top: auto;
+        margin-bottom: 25px;
+    }
+
+    &__search-input {
+        width: 25px;
+        height: 25px;
+        border-radius: 50px;
+        border: 1px solid $borderSearch;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $borderSearch;
+        }
+    }
+
+    &__search-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+}
+//promo
+.promo {
+    height: 100vh;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--promo-bg, url('/images/promo.jpg')) no-repeat center/cover;
+        transform: scaleX(-1);
+        background-position: center top 27%;
+        z-index: -1;
+    }
+
+    &__top {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        gap: 17px;
+        top: 56px;
+        right: 103px;
+    }
+
+    &__order {
+        padding: 11.5px 24px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: all 0.5s ease;
+        border: 1px solid #052E4C;
+        background: none;
+        @include text (400, 13px, 100%, $textOrderbtn);
+        font-family: "PT Sans", sans-serif;
+
+        &:hover {
+            @include text (400, 13px, 100%, $textWhite);
+            background: $backOrderbtn;
+            border: 1px solid $borderOrderbtn;
+        }
+    }
+
+    &__basket {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background: $backWhite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__basket-icon {
+        width: 18.42px;
+        height: 14.5px;
+    }
+
+    &__content {
+        position: absolute;
+        margin-top: 168px;
+        margin-left: 88px;
+    }
+
+    &__title {
+        @include text (500, 78px, 100%, $textDarkBlue);
+        margin-bottom: 24px;
+    }
+
+    &__title-span {
+        @include text (600, 78px, 100%, $textDarkBlue);
+    }
+
+    &__text {
+        max-width: 440px;
+        @include text (400, 16px, 100%, $textDarkBlue);
+        margin-bottom: 48px;
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__calculator {
+        padding: 11.5px 24px;
+        background: $backWhite;
+        border: none;
+        text-transform: uppercase;
+        @include text (400, 13px, 100%, $textDarkBlue);
+        transition: all 0.5s ease;
+        font-family: "PT Sans", sans-serif;
+
+        &:hover {
+            background: $backHoverBtn;
+            @include text (400, 13px, 100%, $textWhite);
+        }
+    }
+
+    &__arrows {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 72px;
+        position: absolute;
+        bottom: 53px;
+        left: 160px;
+        
+        span {
+            @include text (400, 13px, 100%, $textDarkBlue);
+        }
+    }
+
+    &__arrows svg {
+        cursor: url('/images/cursor.svg') 0 0, pointer;
+    }
+}
+//popular
+.popular {
+    background: linear-gradient(90deg, $backPopularGreen 83.4%, $backPopularBlue 16.6%);
+    margin-bottom: 130.65px;
+
+    &__container {
+        margin-left: 88px;
+    }
+    &__content {
+        padding-top: 192px;
+        display: flex;
+    }
+
+    &__left {
+        width: 616px;
+        height: 480px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item, &__item-right {
+        position: relative;
+        transition: opacity 0.5s ease;
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+        
+        &:hover::before {
+            background: rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    &__item:nth-child(1) {
+        width: 100%;
+        height: 50%;
+        background: url('/images/popular1.jpg') no-repeat center/cover;
+    }
+
+    &__item:nth-child(2) {
+        width: 50%;
+        height: 50%;
+        background: url('/images/popular2.jpg') no-repeat center/cover;
+    }
+
+    &__item:nth-child(3) {
+        width: 50%;
+        height: 50%;
+        background: url('/images/popular3.jpg') no-repeat center/cover;
+        background-position: bottom 12px center;
+    }
+
+    &__item-right {
+        width: 504px;
+        background: url('/images/popular4.jpg') no-repeat center/cover;
+    }
+
+    &__item-text {
+        display: block;
+        margin-top: 40px;
+        margin-left: 40px;
+        @include text (700, 25px, 100%, $textDarkBlue);
+        text-transform: uppercase;
+
+            &--white {
+                color: $textWhite;
+            }
+    }
+}
+//offers
+.offers {
+    margin-bottom: 130px;
+    overflow: hidden;
+
+    &__container {
+        margin-left: 88px;
+        overflow: hidden;
+    }
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 22.35px;
+    }
+
+    &__title {
+        @include text (400, 20px, 100%, $textDarkBlue);
+        text-transform: uppercase;
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 72.71px;
+    }
+
+    &__buttons span {
+        @include text (400, 13px, 100%, $textDarkBlue);
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__button-pre, &__button-next {
+        cursor: url(/images/cursor.svg) 0 0, pointer;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+        
+    }
+
+    &__item {
+        padding: 16px 16px 40px;
+        transition: all 0.5s ease;
+        display: block;
+
+        &:hover {
+            background: $backOffersCard;
+            cursor: url('/images/cursor.svg') 0 0, pointer;
+        }
+    }
+
+    &__visual {
+        position: relative;
+        width: 224px;
+        height: 278px;
+        margin-bottom: 24px;
+    }
+
+    &__visual-top {
+        position: absolute;
+        top: 14px;
+        right: 16px;
+    }
+
+    &__info {
+        display: flex;
+
+    }
+
+    &__discount {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background: $backWhite;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            @include text (700, 20px, 100%, $textDiscount);
+        }
+
+        p span {
+            display: inline-block;
+            transform: rotate(-10deg);
+        }
+    }
+
+    &__img {
+        width: 100%;
+    }
+
+    &__visual-bot {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+    }
+
+    &__color {
+        display: block;
+    }
+
+    &__color-wrapper {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        
+        &:hover {
+            cursor: url('/images/cursor.svg') 0 0, pointer;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 11px;
+                left: 11px;
+                width: 8px;
+                height: 8px;
+                z-index: 5;
+                border: 1px solid #417A82;
+                pointer-events: none;
+                border-radius: 8px;
+            }
+        }
+    }
+
+    &__name {
+        width: 207px;
+        height: 63px;
+        @include text (400, 16px, 100%, $textDarkBlue);
+        margin-bottom: 16px;
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__price {
+        margin-bottom: 16px;
+        display: flex;
+        gap: 16px;
+    }
+
+    &__price-actual {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    &__price-actual p {
+        @include text (400, 20px, 100%, $textDarkBlue);
+    }
+
+    &__price-actual span {
+        @include text (700, 32px, 100%, $textDarkBlue);
+    }
+
+    &__price-old {
+        position: relative;
+        display: inline-block;
+        
+        span {
+            @include text (400, 32px, 100%, $textDarkBlue);
+            opacity: 0.2;
+            display: inline-block;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            border-top: 1px solid #B84C74;
+            transform: rotate(-29.22deg);
+            transform-origin: center center;
+            pointer-events: none;
+        }
+    }
+
+    &__buy {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__buy-btn {
+        width: 160px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid $borderDarkBlue;
+        background: none;
+        @include text (400, 13px, 100%, $textDarkBlue);
+        transition: all 0.5s ease;
+        text-transform: uppercase;
+        font-family: "PT Sans", sans-serif;
+
+        &:hover {
+            color: $textWhite;
+            border-color: $borderOrderbtn;
+            background: $backHoverBtn;
+        }
+    }
+
+}
+//specialists
+.specialists {
+    margin-bottom: 130px;
+    position: relative;
+    overflow-x: clip;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        background: $backPopularBlue;
+    }
+    &__container {
+        margin-left: 88px;
+        display: flex;
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        padding-top: 164px;
+        padding-bottom: 185px;
+        position: relative;
+    }
+
+    &__item:nth-child(1) {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/specialists1.jpg') no-repeat;
+            background-size: cover;
+            transform: scaleX(-1);
+            z-index: 1;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+    }
+    &__item:nth-child(2) {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/images/specialists2.jpg') no-repeat;
+            background-size: cover;
+            transform: scaleX(-1);
+            z-index: 1;
+        }
+        
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+    }
+
+    &__title {
+        @include text (700, 40px, 38px, $textWhite);
+        width: 477px;
+        text-align: center;
+        margin-bottom: 24px;
+        z-index: 3;
+
+        span {
+            text-transform: uppercase;
+        }
+    }
+
+    &__text {
+        width: 301px;
+        @include text (400, 16px, 100%, $textWhite);
+        margin-bottom: 40px;
+        text-align: center;
+        z-index: 3;
+        font-family: "PT Sans", sans-serif; 
+    }
+
+    &__button {
+        border: 1px solid $borderWhiteBtn;
+        padding: 11.5px 24px;
+        text-transform: uppercase;
+        background: none;
+        @include text (400, 13px, 100%, $textWhite);
+        transition: all 0.5s ease;
+        z-index: 3;
+        font-family: "PT Sans", sans-serif;
+
+        &:hover {
+            background: $borderOrderbtn;
+            border-color: $borderOrderbtn;
+        }
+    }
+}
+//footer
+.footer {
+    padding: 48px 0 29px;
+    background: $backFooter;
+
+    &__container {
+        margin: 0 auto;
+    }
+
+    &__top {
+        display: flex;
+        margin-bottom: 47px;
+    }
+
+    &__left {
+        display: flex;
+        gap: 157px;
+    }
+
+    &__nav:nth-child(1) {
+        width: 35px;
+    }
+
+    &__nav:nth-child(2) {
+        width: 85px;
+    }
+
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__nav-item {
+        a {
+            @include text (400, 13px, 100%, $textWhite);
+            transition: all 0.5s ease;
+            font-family: "PT Sans", sans-serif;
+
+            &:hover {
+                color: $textNav;
+            }
+        }
+    }
+
+    &__center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 346px;
+        margin-left: 121px;
+        margin-right: 169px;
+    }
+
+    &__logo {
+        max-width: 81px;
+        height: 43px;
+        @include text (400, 33px, 100%, $textWhite);
+        margin-bottom: 26px;
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__text {
+        @include text (400, 13px, 100%, $textWhite);
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__text:nth-child(2) {
+        @include text (700, 13px, 100%, $textWhite);
+        margin-bottom: 10px;
+        font-family: "PT Sans", sans-serif;
+    }
+
+    &__text:nth-child(4) {
+        margin-bottom: 28px;
+    }
+
+    &__phons {
+        display:flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__number {
+        @include text (700, 25px, 100%, $textWhite);
+        transition: all 0.5s ease;
+
+        &:hover {
+            color: $textNav;
+        }
+    }
+
+    &__right {
+        width: 236px;
+    }
+
+    &__button {
+        border: 1px solid $borderFooterBtn;
+        padding: 11.5px 76px;
+        text-align: center;
+        background: none;
+        @include text (400, 13px, 100%, $textWhite);
+        transition: all 0.5s ease;
+        margin-bottom: 61px;
+        font-family: "PT Sans", sans-serif;
+
+        &:hover {
+            background: $borderOrderbtn;
+            border-color: $borderOrderbtn;
+        }
+    }
+
+    &__mail {
+        @include text (400, 13px, 100%, $textWhite);
+        width: 82px;
+        height: 34px;
+        margin-bottom: 24px;
+        font-family: "PT Sans", sans-serif;
+
+        &:hover span{
+            color: $textNav;
+        }
+    }
+
+    &__soc {
+        width: 165px;
+        display: flex;
+        justify-content: space-between;
+        transition: all 0.5s ease;
+    }
+
+    &__soc-link a {
+        @include text (700, 13px, 100%, $textWhite);
+        font-family: "PT Sans", sans-serif;
+        &:hover {
+            color: $textNav;
+        }
+    }
+
+    &__hr {
+        margin-bottom: 16px;
+        border: 1px solid $backWhite;
+        opacity: 0.5;
+    }
+
+    &__bot {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+    }
+
+    &__copyright {
+        @include text (400, 13px, 100%, $textWhite);
+        opacity: 0.5;
+    }
+
+    &__agreements {
+        margin-left: 254px;
+        width: 451px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__agreements-link {
+        @include text (400, 13px, 100%, $textWhite);
+        font-family: "PT Sans", sans-serif;
+        opacity: 0.5;
+        transition: all 0.5s ease;
+
+        &:hover {
+            color: $textNav;
+            opacity: 1;
+        }
+    }
+
+    &__development {
+        margin-left: 219px;
+        @include text (400, 13px, 100%, $textWhite);
+        font-family: "PT Sans", sans-serif;
+        opacity: 0.5;
+    }
+}
