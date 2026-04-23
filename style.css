@@ -43,7 +43,7 @@ body {
 a {
   text-decoration: none;
   display: block;
-  cursor: url("/images/cursor.svg") 0 0, pointer;
+  cursor: url("images/cursor.svg") 0 0, pointer;
 }
 
 ul {
@@ -51,7 +51,7 @@ ul {
 }
 
 button {
-  cursor: url("/images/cursor.svg") 0 0, pointer;
+  cursor: url("images/cursor.svg") 0 0, pointer;
 }
 
 .container {
@@ -137,7 +137,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--promo-bg, url("/images/promo.jpg")) no-repeat center/cover;
+  background: var(--promo-bg, url("images/promo.jpg")) no-repeat center/cover;
   transform: scaleX(-1);
   background-position: center top 27%;
   z-index: -1;
@@ -246,7 +246,7 @@ button {
   color: #052E4C;
 }
 .promo__arrows svg {
-  cursor: url("/images/cursor.svg") 0 0, pointer;
+  cursor: url("images/cursor.svg") 0 0, pointer;
 }
 
 .popular {
@@ -287,22 +287,22 @@ button {
 .popular__item:nth-child(1) {
   width: 100%;
   height: 50%;
-  background: url("/images/popular1.jpg") no-repeat center/cover;
+  background: url("images/popular1.jpg") no-repeat center/cover;
 }
 .popular__item:nth-child(2) {
   width: 50%;
   height: 50%;
-  background: url("/images/popular2.jpg") no-repeat center/cover;
+  background: url("images/popular2.jpg") no-repeat center/cover;
 }
 .popular__item:nth-child(3) {
   width: 50%;
   height: 50%;
-  background: url("/images/popular3.jpg") no-repeat center/cover;
+  background: url("images/popular3.jpg") no-repeat center/cover;
   background-position: bottom 12px center;
 }
 .popular__item-right {
   width: 504px;
-  background: url("/images/popular4.jpg") no-repeat center/cover;
+  background: url("images/popular4.jpg") no-repeat center/cover;
 }
 .popular__item-text {
   display: block;
@@ -354,7 +354,7 @@ button {
   font-family: "PT Sans", sans-serif;
 }
 .offers__button-pre, .offers__button-next {
-  cursor: url(/images/cursor.svg) 0 0, pointer;
+  cursor: url(images/cursor.svg) 0 0, pointer;
 }
 .offers__cards {
   display: flex;
@@ -368,7 +368,7 @@ button {
 }
 .offers__item:hover {
   background: #E3F6F5;
-  cursor: url("/images/cursor.svg") 0 0, pointer;
+  cursor: url("images/cursor.svg") 0 0, pointer;
 }
 .offers__visual {
   position: relative;
@@ -421,7 +421,7 @@ button {
   cursor: pointer;
 }
 .offers__color-wrapper:hover {
-  cursor: url("/images/cursor.svg") 0 0, pointer;
+  cursor: url("images/cursor.svg") 0 0, pointer;
 }
 .offers__color-wrapper:hover::before {
   content: "";
@@ -552,7 +552,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/images/specialists1.jpg") no-repeat;
+  background: url("images/specialists1.jpg") no-repeat;
   background-size: cover;
   transform: scaleX(-1);
   z-index: 1;
@@ -574,7 +574,7 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("/images/specialists2.jpg") no-repeat;
+  background: url("images/specialists2.jpg") no-repeat;
   background-size: cover;
   transform: scaleX(-1);
   z-index: 1;
